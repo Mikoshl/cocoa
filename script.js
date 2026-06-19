@@ -19,7 +19,7 @@ const romanticToast = document.querySelector("#romantic-toast");
 const romanticYes = document.querySelector("#romantic-yes");
 
 const escapeMessages = [
-  "Рита, кнопка всё-таки заметила твой курсор",
+  "Кнопка всё-таки заметила твой курсор",
   "Кажется, «Нет» сегодня немного стесняется тебя",
   "Почти получилось… но какао убедительнее",
   "У этой кнопки свои планы на понедельник",
@@ -145,7 +145,7 @@ function resetNoButton() {
   noButton.removeAttribute("style");
   inviteActions.appendChild(noButton);
   playfulNote.classList.remove("is-active");
-  playfulNote.textContent = "Рита, кажется, у этого предложения есть только один верный ответ";
+  playfulNote.textContent = "Кажется, у этого предложения есть только один верный ответ";
 }
 
 noButton.addEventListener("pointerenter", (event) => scheduleNoButtonMove(event, 430));
