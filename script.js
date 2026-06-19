@@ -107,7 +107,7 @@ function moveNoButton(event) {
   playfulNote.classList.add("is-active");
   escapeCount += 1;
 
-  if (escapeCount >= 10 && !romanticShown) {
+  if (escapeCount >= 3 && !romanticShown) {
     romanticShown = true;
     window.setTimeout(showRomanticToast, 620);
   }
