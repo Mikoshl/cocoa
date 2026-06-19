@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#211216" />
+    <meta name="description" content="Тёплое приглашение на поездку с горячим какао" />
+    <title>Есть тёплое предложение ☕</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="ambient" aria-hidden="true">
+      <i></i><i></i><i></i><i></i><i></i>
+    </div>
+
+    <main class="shell">
+      <section class="card invite-card" id="invite-step" aria-labelledby="invite-title">
+        <div class="invite-copy">
+          <div class="mini-brand"><span>☕</span> Только для тебя</div>
+          <p class="kicker">Маленький план на понедельник</p>
+          <h1 id="invite-title">Сделаем утро<br /><em>немного теплее?</em></h1>
+          <p class="question">
+            Хочешь поехать в офис с чашкой горячего какао<br class="desktop-only" />
+            и в приятной компании?
+          </p>
+
+          <div class="actions" id="invite-actions">
+            <button class="button button-primary" id="yes-button" type="button">
+              Да, с удовольствием <span aria-hidden="true">→</span>
+            </button>
+            <button class="button button-ghost" id="no-button" type="button">Нет</button>
+          </div>
+          <p class="tiny-note" id="playful-note" aria-live="polite">
+            Кажется, у этого предложения есть только один верный ответ
+          </p>
+        </div>
+
+        <div class="invite-visual" aria-hidden="true">
+          <div class="visual-glow"></div>
+          <span class="spark spark-one">✦</span>
+          <span class="spark spark-two">✦</span>
+          <span class="spark spark-three">·</span>
+
+          <div class="steam-lines"><i></i><i></i><i></i></div>
+          <div class="mug">
+            <div class="mug-cocoa"><span></span><span></span><span></span></div>
+            <div class="mug-shine"></div>
+          </div>
+          <div class="saucer"></div>
+
+          <div class="route-ticket">
+            <div class="ticket-icon">⌁</div>
+            <div><small>Маршрут</small><strong>К хорошему утру</strong></div>
+          </div>
+          <div class="monday-badge"><small>утро</small><strong>ПН</strong></div>
+        </div>
+      </section>
+
+      <section class="card details-card is-hidden" id="details-step" aria-labelledby="details-title">
+        <button class="back-button" id="back-button" type="button" aria-label="Вернуться назад">
+          <span aria-hidden="true">←</span> Назад
+        </button>
+
+        <header class="step-header">
+          <div class="heart-mark" aria-hidden="true">♥</div>
+          <p class="kicker centered">Отличный выбор</p>
+          <h2 id="details-title">Остались приятные детали</h2>
+          <p>Подскажи время и пожелания — обо всём остальном я позабочусь.</p>
+        </header>
+
+        <form id="details-form">
+          <div class="form-grid">
+            <section class="form-block time-block">
+              <div class="field-heading">
+                <span class="field-icon" aria-hidden="true">◷</span>
+                <div><label for="pickup-hour">Во сколько заехать?</label><small>Начнём утро без спешки</small></div>
+              </div>
+              <div class="time-picker" aria-label="Время заезда">
+                <label class="time-select" for="pickup-hour">
+                  <span>Часы</span>
+                  <select id="pickup-hour" aria-label="Часы">
+                    <option value="07" selected>07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                  </select>
+                </label>
+                <b aria-hidden="true">:</b>
+                <label class="time-select" for="pickup-minute">
+                  <span>Минуты</span>
+                  <select id="pickup-minute" aria-label="Минуты">
+                    <option value="00" selected>00</option>
+                    <option value="05">05</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                    <option value="25">25</option>
+                    <option value="30">30</option>
+                    <option value="35">35</option>
+                    <option value="40">40</option>
+                    <option value="45">45</option>
+                    <option value="50">50</option>
+                    <option value="55">55</option>
+                  </select>
+                </label>
+                <input id="pickup-time" name="pickupTime" type="hidden" value="07:00" />
+              </div>
+            </section>
+
+            <fieldset class="form-block cocoa-block">
+              <legend>
+                <span class="field-icon" aria-hidden="true">☕</span>
+                <span>Каким сделать какао?<small>Выбирай любимое</small></span>
+              </legend>
+              <div class="chips">
+                <label class="chip">
+                  <input type="radio" name="cocoa" value="Классическое" checked />
+                  <span>Классическое</span>
+                </label>
+                <label class="chip">
+                  <input type="radio" name="cocoa" value="С маршмеллоу" />
+                  <span>С маршмеллоу</span>
+                </label>
+                <label class="chip">
+                  <input type="radio" name="cocoa" value="С корицей" />
+                  <span>С корицей</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <section class="form-block wishes-block">
+              <div class="field-heading">
+                <span class="field-icon" aria-hidden="true">✦</span>
+                <div><label for="wishes">Есть особые пожелания?</label><small>Можно оставить пустым</small></div>
+              </div>
+              <textarea
+                id="wishes"
+                name="wishes"
+                rows="3"
+                maxlength="500"
+                placeholder="Музыка, маршрут, любимая булочка…"
+              ></textarea>
+            </section>
+          </div>
+
+          <button class="button button-primary submit-button" type="submit">
+            <span class="submit-text">Всё верно, отправить</span>
+            <span class="loader" aria-hidden="true"></span>
+            <span aria-hidden="true">♥</span>
+          </button>
+          <p class="form-status" id="form-status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="card final-card is-hidden" id="success-step" aria-labelledby="success-title">
+        <div class="final-orbit" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="big-heart" aria-hidden="true">♥</div>
+        <p class="kicker centered">План утверждён</p>
+        <h2 id="success-title">Тогда до понедельника</h2>
+        <p class="final-copy" id="success-copy">
+          Договорились. В понедельник заеду вовремя — с горячим какао, хорошей музыкой
+          и надеждой сделать твоё утро чуточку теплее.
+        </p>
+        <div class="summary" id="answer-summary"></div>
+        <div class="final-note">У этого понедельника есть все шансы стать особенным <span>☕</span></div>
+      </section>
+    </main>
+
+    <div
+      class="romantic-toast is-hidden"
+      id="romantic-toast"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="romantic-title"
+    >
+      <div class="romantic-dialog">
+        <div class="dialog-heart" aria-hidden="true">♥</div>
+        <p class="kicker centered">Важное сообщение</p>
+        <h3 id="romantic-title">Ты правда всё ещё пытаешься?</h3>
+        <p>
+          Я уже мысленно приготовил какао, выбрал хорошую музыку и оставил рядом
+          самое уютное место. Может, всё-таки поедем вместе?
+        </p>
+        <div class="dialog-actions">
+          <button class="button button-primary" id="romantic-yes" type="button">
+            Ну ладно, поехали <span aria-hidden="true">♥</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer>Сделано с теплом и щепоткой какао</footer>
+    <script src="script.js"></script>
+  </body>
+</html>
