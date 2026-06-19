@@ -120,17 +120,6 @@ h2 { font-size: clamp(3rem, 5.5vw, 4.4rem); }
 .button-ghost:hover { color: var(--coral-dark); border-color: rgba(173,77,82,.28); background: #fff; }
 .button:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid rgba(204,104,105,.24); outline-offset: 3px; }
 
-#no-button.is-preparing { animation: tiny-wiggle .38s ease-in-out infinite alternate; }
-#no-button.is-running {
-  position: fixed;
-  z-index: 9999;
-  margin: 0;
-  opacity: 1;
-  visibility: visible;
-  transition: left .48s cubic-bezier(.22,.75,.2,1), top .48s cubic-bezier(.22,.75,.2,1), transform .48s ease;
-  border-color: rgba(173,77,82,.22);
-  box-shadow: 0 12px 30px rgba(15,6,8,.3);
-}
 .tiny-note {
   display: inline-flex;
   align-items: center;
@@ -269,6 +258,8 @@ body.dialog-open { overflow: hidden; }
 .romantic-dialog > p:not(.kicker) { max-width: 390px; margin: 18px auto 25px; color: var(--muted); font-size: .87rem; line-height: 1.68; }
 .dialog-actions { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 12px; }
 .dialog-actions .button { width: min(100%, 330px); }
+.dialog-no { padding: 7px 12px; color: #8f746d; border: 0; border-bottom: 1px solid rgba(143,116,109,.3); background: transparent; cursor: pointer; font-size: .73rem; }
+.dialog-no:hover { color: var(--coral-dark); border-bottom-color: currentColor; }
 
 footer { position: relative; z-index: 1; height: 42px; text-align: center; color: rgba(255,236,220,.48); font-size: .64rem; letter-spacing: .07em; }
 
@@ -276,7 +267,6 @@ footer { position: relative; z-index: 1; height: 42px; text-align: center; color
 @keyframes ambient-pulse { 0%,100% { opacity: .3; transform: scale(.8); } 50% { opacity: 1; transform: scale(1.2); } }
 @keyframes twinkle { 0%,100% { opacity: .4; transform: scale(.82) rotate(0); } 50% { opacity: 1; transform: scale(1.18) rotate(14deg); } }
 @keyframes steam { 0%,100% { opacity: .18; transform: translateY(10px) scaleX(.85); } 50% { opacity: .75; transform: translateY(-10px) scaleX(1.1); } }
-@keyframes tiny-wiggle { from { transform: rotate(-2deg) translateX(-1px); } to { transform: rotate(2deg) translateX(1px); } }
 @keyframes note-pop { 0% { opacity: .55; transform: translateY(3px) scale(.98); } 55% { transform: translateY(-1px) scale(1.025); } 100% { opacity: 1; transform: none; } }
 @keyframes heartbeat { 0%,100% { transform: scale(1); } 12% { transform: scale(1.07); } 24% { transform: scale(1); } }
 @keyframes float { 0%,100% { translate: 0 0; rotate: 10deg; } 50% { translate: 0 8px; rotate: 35deg; } }
@@ -324,5 +314,4 @@ footer { position: relative; z-index: 1; height: 42px; text-align: center; color
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
-  #no-button.is-running { transition-duration: .01ms; }
 }
